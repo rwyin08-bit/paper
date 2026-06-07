@@ -1,0 +1,34 @@
+﻿version: "3.8"
+services:
+  pebi-simulator:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: pebi-simulator:latest
+    volumes:
+      - ./results:/results
+      - ./config:/app/config:ro
+    environment:
+      - OMP_NUM_THREADS=1
+    command: >
+      python3 scripts/run_simulation.py
+      --config config/base_case.yaml
+      --output /results
+  pebi-cluster:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: pebi-simulator:latest
+    deploy:
+      replicas: 8
+    volumes:
+      - ./results:/results
+      - ./config:/app/config:ro
+    environment:
+      - OMP_NUM_THREADS=1
+    command: >
+      mpirun -np 512
+      python3 scripts/run_simulation.py
+      --config config/base_case.yaml
+      --output /results
+      --parallel

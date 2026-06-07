@@ -1,0 +1,18 @@
+﻿# Parameter Sensitivity Configuration (Section 3.7)
+sensitivity:
+  perturbation: 0.20
+  parameters:
+    - fracture_half_length_m
+    - matrix_permeability_md
+    - fracture_conductivity_md_m
+    - stage_spacing_m
+    - natural_fracture_permeability_md
+    - rock_compressibility_psi
+single_well:
+  n_wells: 1
+  n_hydraulic_stages: 12
+  stages_per_well: 12
+  operation: primary_depletion
+spe10:
+  grid: "60x220x85"
+  reference_cells: 1122000

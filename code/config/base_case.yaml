@@ -1,0 +1,51 @@
+﻿# Base Case Configuration (Table 5)
+porosity: 0.07
+matrix_permeability_md: 0.008
+rock_compressibility_psi: 5.0e-6
+initial_pressure_mpa: 35.0
+bubble_point_pressure_mpa: 25.0
+initial_oil_saturation: 0.65
+initial_water_saturation: 0.35
+oil_viscosity_cp: 0.35
+oil_fvf: 1.35
+solution_gor: 120.0
+n_wells: 5
+n_hydraulic_stages: 100
+stages_per_well: 20
+fracture_half_length_m: 150.0
+fracture_conductivity_md_m: 500.0
+fracture_aperture_mm: 3.0
+fracture_permeability_md: 167000.0
+stage_spacing_m: 60.0
+domain_x_min: 0
+domain_x_max: 4000
+domain_y_min: 0
+domain_y_max: 3000
+simulation_time_years: 10.0
+max_timestep_days: 1.0
+newton_tolerance: 1.0e-4
+mesh:
+  h_n: 1.0
+  h_f: 50.0
+  alpha: 0.5
+  min_angle: 25.0
+  lloyd_iterations: 50
+solver:
+  sa_amg_epsilon_str: 0.25
+  sa_amg_omega: 0.7
+  sa_amg_max_coarse: 500
+  gmres_restart: 30
+  gmres_tolerance: 1.0e-6
+  ilu_fill_level: 0
+  amg_rebuild_frequency: 5
+dfn:
+  n_fractures: 1247
+  fisher_concentration: 15.0
+  mean_strike_deg: 45.0
+  power_law_exponent: 2.3
+  length_min_m: 10.0
+  length_max_m: 500.0
+  aperture_mean_mm: 0.5
+  aperture_std_mm: 0.3
+  natural_fracture_permeability_md: 10000.0
+  monte_carlo_realizations: 25
