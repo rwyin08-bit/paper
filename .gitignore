@@ -1,0 +1,25 @@
+# Microsoft Word temporary files
+~$*.docx
+~$*.doc
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Output data
+*.vtu
+*.pvd
+*.h5
+output/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
